@@ -20,9 +20,10 @@ func New(ms uint, markup string) *Dot {
 	rctx.AddClass("reddot")
 
 	rev, _ := gtk.RevealerNew()
-	rev.Add(red)
+	rev.SetRevealChild(true)
 	rev.SetTransitionType(gtk.REVEALER_TRANSITION_TYPE_CROSSFADE)
 	rev.SetTransitionDuration(ms)
+	rev.Add(red)
 
 	if ms > 0 {
 		id, _ := glib.TimeoutAdd(ms, func() bool {
