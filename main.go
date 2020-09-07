@@ -5,9 +5,9 @@ import (
 	"image"
 	"log"
 
-	"github.com/diamondburned/lsoc/components/camerabox"
-	"github.com/diamondburned/lsoc/components/reddot"
-	"github.com/diamondburned/lsoc/gdkutil"
+	"github.com/diamondburned/lsoc-overlay/components/camerabox"
+	"github.com/diamondburned/lsoc-overlay/components/reddot"
+	"github.com/diamondburned/lsoc-overlay/gdkutil"
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"

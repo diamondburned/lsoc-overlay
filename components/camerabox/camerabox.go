@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/diamondburned/lsoc/camera"
+	"github.com/diamondburned/lsoc-overlay/camera"
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
 	"github.com/pkg/errors"
@@ -146,12 +146,12 @@ func NewCamera() *Camera {
 func (c *Camera) Update(cam camera.Camera) {
 	if name := cam.Name(); c.name != name {
 		c.name = name
-		c.Name.SetLabel(cam.Name())
+		c.Name.SetLabel(cam.Name() + ": ")
 	}
 
 	if xs := camera.ExecutableNames(cam.PIDs); !stringsEq(c.execs, xs) {
 		c.execs = xs
-		c.Procs.SetMarkup(fmt.Sprintf(`<span size="small">: %s</span>`, strings.Join(xs, ", ")))
+		c.Procs.SetMarkup(fmt.Sprintf(`<span size="small">%s</span>`, strings.Join(xs, ", ")))
 	}
 }
 

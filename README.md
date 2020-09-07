@@ -1,4 +1,4 @@
-# lsoc
+# lsoc-overlay
 
 Overlay for the List of Open Cameras.
 
@@ -12,7 +12,7 @@ Dependencies: `go`, `gtk3`, `v4l2`, Linux.
 # Optionally add this to shellrc.
 export PATH="$PATH:${GOBIN:-$GOPATH/bin}"
 
-go install github.com/diamondburned/lsoc
+go install github.com/diamondburned/lsoc-overlay
 ```
 
 ## Usage
@@ -21,5 +21,5 @@ go install github.com/diamondburned/lsoc
 # Optionally install the default config.json.
 cp config.json ~/.config/lsoc.config.json
 
-lsoc [-c ~/.config/lsoc.config.json]
+lsoc-overlay [-c ~/.config/lsoc.config.json]
 ```

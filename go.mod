@@ -1,4 +1,4 @@
-module github.com/diamondburned/lsoc
+module github.com/diamondburned/lsoc-overlay
 
 go 1.14
 
