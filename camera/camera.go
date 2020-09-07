@@ -33,8 +33,8 @@ func FilterCameras(cameras []Camera, filterFn func(c *Camera) bool) []Camera {
 }
 
 type Camera struct {
-	Path string // /dev/videoX
-	PIDs []ps.Process
+	Path  string // /dev/videoX
+	Procs []ps.Process
 
 	name string
 }
@@ -71,8 +71,8 @@ func cameras(prefix string) ([]Camera, error) {
 		sort.Ints(pids)
 
 		var cam = Camera{
-			Path: file,
-			PIDs: make([]ps.Process, 0, len(pids)),
+			Path:  file,
+			Procs: make([]ps.Process, 0, len(pids)),
 		}
 
 		for _, pid := range pids {
@@ -82,7 +82,7 @@ func cameras(prefix string) ([]Camera, error) {
 				continue
 			}
 
-			cam.PIDs = append(cam.PIDs, p)
+			cam.Procs = append(cam.Procs, p)
 		}
 
 		cams = append(cams, cam)
@@ -96,7 +96,7 @@ func cameras(prefix string) ([]Camera, error) {
 }
 
 func (c Camera) IsActive() bool {
-	return len(c.PIDs) > 0
+	return len(c.Procs) > 0
 }
 
 func (c Camera) Name() string {

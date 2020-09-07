@@ -58,12 +58,12 @@ func (b *CameraBox) Update() (n int, err error) {
 
 		// Filter out cameras with ignored process names.
 		for _, procName := range b.hiddenProcs {
-			for _, proc := range c.PIDs {
-				var filtered = c.PIDs[:0]
+			for _, proc := range c.Procs {
+				var filtered = c.Procs[:0]
 
 				if proc.Executable() == procName {
 					// Ignore the camera entirely if this is the only process.
-					if len(c.PIDs) == 1 {
+					if len(c.Procs) == 1 {
 						return false
 					}
 				} else {
@@ -73,7 +73,7 @@ func (b *CameraBox) Update() (n int, err error) {
 
 				// Set the filtered slice into the PIDs field of the camera
 				// pointer.
-				c.PIDs = filtered
+				c.Procs = filtered
 			}
 		}
 
@@ -149,7 +149,7 @@ func (c *Camera) Update(cam camera.Camera) {
 		c.Name.SetLabel(cam.Name() + ": ")
 	}
 
-	if xs := camera.ExecutableNames(cam.PIDs); !stringsEq(c.execs, xs) {
+	if xs := camera.ExecutableNames(cam.Procs); !stringsEq(c.execs, xs) {
 		c.execs = xs
 		c.Procs.SetMarkup(fmt.Sprintf(`<span size="small">%s</span>`, strings.Join(xs, ", ")))
 	}
