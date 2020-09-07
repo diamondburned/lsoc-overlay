@@ -29,3 +29,29 @@ CPU time and battery. If one wishes to prioritize responsiveness, change
 `num_scanners` to `-1` and `polling_ms` to `250` (or any low number). This will
 ensure that `lsoc-overlay` scans with multiple threads in a short amount of
 time.
+
+### Nix
+
+```nix
+{ config, pkgs, lib, ... }:
+
+let lsoc-overlay = builtins.fetchGit {
+	url = "https://github.com/diamondburned/lsoc-overlay.git";
+	rev = "1e56cc825ce885a64a7e635f54ff704958e7d029"; # update this
+};
+
+in {
+	# <username> should be changed to the appropriate username.
+	home-manager.users.<username> = {
+		imports = [ "${lsoc-overlay}" ];
+	
+		services.lsoc-overlay = {
+			enable = true;
+			config = {
+				polling_ms = 1000;
+				num_scanners = -1;
+			};
+		};
+	};
+}
+```
