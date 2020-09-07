@@ -17,6 +17,7 @@ type Config struct {
 	PollingMs uint   `json:"polling_ms"`
 
 	HiddenProcs []string `json:"hidden_procs"`
+	NumScanners int      `json:"num_scanners"`
 
 	Window struct {
 		X           int  `json:"x"`

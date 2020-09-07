@@ -2,6 +2,10 @@ github.com/diamondburned/gotk3 v0.0.0-20200816224505-3cd69b83a48a h1:wEldljb421/
 github.com/diamondburned/gotk3 v0.0.0-20200816224505-3cd69b83a48a/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=
 github.com/diamondburned/lsof v0.0.0-20200907042205-1cb3f3e3e704 h1:WcXTFSuLxcdZMBD+NTfZrIbl9JI4lWbvsZn7s6o572k=
 github.com/diamondburned/lsof v0.0.0-20200907042205-1cb3f3e3e704/go.mod h1:/JIpsaoD2FpUd532Lm/Y+SZ0nMV3zquWgh+Rp8yfWcc=
+github.com/diamondburned/lsof v0.0.0-20200907183329-84ddd54a6436 h1:DfonKHSxi4cqptGOyuOAGLSEUrKMYX++v7puR6AIMz0=
+github.com/diamondburned/lsof v0.0.0-20200907183329-84ddd54a6436/go.mod h1:/JIpsaoD2FpUd532Lm/Y+SZ0nMV3zquWgh+Rp8yfWcc=
+github.com/diamondburned/lsof v0.0.0-20200907184325-179c56e74adf h1:QHKKkcMJNX5oYhxVWGRIbjjzti+IFtfF9wH2qL/djU4=
+github.com/diamondburned/lsof v0.0.0-20200907184325-179c56e74adf/go.mod h1:/JIpsaoD2FpUd532Lm/Y+SZ0nMV3zquWgh+Rp8yfWcc=
 github.com/mitchellh/go-ps v1.0.0 h1:i6ampVEEF4wQFF+bkYfwYgY+F/uYJDktmvLPf7qIgjc=
 github.com/mitchellh/go-ps v1.0.0/go.mod h1:J4lOc8z8yJs6vUwklHw2XEIiT4z4C40KtWVN3nvg8Pg=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=

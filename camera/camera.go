@@ -42,7 +42,7 @@ type Camera struct {
 var ErrCameraNotFound = errors.New("camera not found")
 
 func OpenCamera(path string) (*Camera, error) {
-	c, err := cameras(path)
+	c, err := cameras(func(str string) bool { return str == path })
 	if err != nil {
 		return nil, err
 	}
@@ -55,11 +55,11 @@ func OpenCamera(path string) (*Camera, error) {
 }
 
 func Cameras() ([]Camera, error) {
-	return cameras("/dev/video")
+	return cameras(func(str string) bool { return strings.HasPrefix(str, "/dev/video") })
 }
 
-func cameras(prefix string) ([]Camera, error) {
-	l, err := lsof.Scan(func(str string) bool { return strings.HasPrefix(str, prefix) })
+func cameras(strEq lsof.StringChecker) ([]Camera, error) {
+	l, err := lsof.Scan(strEq)
 	if err != nil {
 		return nil, errors.Wrap(err, "Failed to get cameras")
 	}

@@ -5,7 +5,7 @@ go 1.14
 replace github.com/gotk3/gotk3 => github.com/diamondburned/gotk3 v0.0.0-20200816224505-3cd69b83a48a
 
 require (
-	github.com/diamondburned/lsof v0.0.0-20200907042205-1cb3f3e3e704
+	github.com/diamondburned/lsof v0.0.0-20200907184325-179c56e74adf
 	github.com/gotk3/gotk3 v0.0.0-00010101000000-000000000000
 	github.com/mitchellh/go-ps v1.0.0
 	github.com/pkg/errors v0.9.1

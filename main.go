@@ -8,10 +8,14 @@ import (
 	"github.com/diamondburned/lsoc-overlay/components/camerabox"
 	"github.com/diamondburned/lsoc-overlay/components/reddot"
 	"github.com/diamondburned/lsoc-overlay/gdkutil"
+	"github.com/diamondburned/lsof"
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
 	"github.com/pkg/errors"
+
+	"net/http"
+	_ "net/http/pprof"
 )
 
 var configPath = "./config.json"
@@ -41,6 +45,8 @@ func init() {
 			text-shadow: 0px 0px 2px alpha(@recording, 0.5);
 		}
 	`)
+
+	go http.ListenAndServe(":20485", nil)
 }
 
 func main() {
@@ -51,6 +57,10 @@ func main() {
 
 	if err := c.LoadCSS(); err != nil {
 		log.Fatalln("Failed to load CSS:", err)
+	}
+
+	if c.NumScanners > 0 {
+		lsof.NumWorkers = c.NumScanners
 	}
 
 	red := reddot.New(c.RedBlinkMs, c.RedButton)
@@ -97,7 +107,9 @@ func main() {
 		}
 
 		// Reveal the overlay if there are cameras.
-		rev.SetRevealChild(n > 0)
+		if reveal := n > 0; reveal != rev.GetRevealChild() {
+			rev.SetRevealChild(reveal)
+		}
 
 		return true
 	})
