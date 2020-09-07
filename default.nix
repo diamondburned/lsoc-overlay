@@ -7,7 +7,7 @@ let cfg  = config.services.lsoc-overlay;
 
 	package = pkgs.buildGoModule rec {
 		name = "lsoc-overlay";
-		version = "0.0.1";
+		version = "0.0.2";
 
 		src = ./.;
 		vendorSha256 = "14a88jnx60ng0yq01cccr5qj69pxgk4rw5ilsgqi9flfrpci6xd7";
@@ -23,7 +23,8 @@ in {
 		config = mkOption {
 			type = types.attrs;
 			default = {
-				polling_ms = 1000;
+				polling_ms   = 1000;
+				red_blink_ms = 1200;
 				hidden_procs = [];
 				num_scanners = 1;
 				window = {
