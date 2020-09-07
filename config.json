@@ -1,0 +1,15 @@
+{
+	"red_button": "⬤",
+	"red_blink_ms": 1200,
+
+	"custom_css": "",
+	"polling_ms": 250,
+
+	"hidden_procs": ["ffmpeg"],
+
+	"window": {
+		"x": 5,
+		"y": 5,
+		"passthrough": true
+	}
+}

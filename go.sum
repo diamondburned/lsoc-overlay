@@ -1,0 +1,12 @@
+github.com/diamondburned/gotk3 v0.0.0-20200816224505-3cd69b83a48a h1:wEldljb421/Jp84RNb0zBfqmiWt/TTQzUE6R1ap6UuQ=
+github.com/diamondburned/gotk3 v0.0.0-20200816224505-3cd69b83a48a/go.mod h1:/hqFpkNa9T3JgNAE2fLvCdov7c5bw//FHNZrZ3Uv9/Q=
+github.com/diamondburned/lsof v0.0.0-20200907042205-1cb3f3e3e704 h1:WcXTFSuLxcdZMBD+NTfZrIbl9JI4lWbvsZn7s6o572k=
+github.com/diamondburned/lsof v0.0.0-20200907042205-1cb3f3e3e704/go.mod h1:/JIpsaoD2FpUd532Lm/Y+SZ0nMV3zquWgh+Rp8yfWcc=
+github.com/mitchellh/go-ps v1.0.0 h1:i6ampVEEF4wQFF+bkYfwYgY+F/uYJDktmvLPf7qIgjc=
+github.com/mitchellh/go-ps v1.0.0/go.mod h1:J4lOc8z8yJs6vUwklHw2XEIiT4z4C40KtWVN3nvg8Pg=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/reiver/go-v4l2 v0.0.0-20180319083212-80a687e4e796 h1:xpGQRtoJzKw0UShv4Ckc3uCu5qDEvfK83fAphhUWzWM=
+github.com/reiver/go-v4l2 v0.0.0-20180319083212-80a687e4e796/go.mod h1:h8T5QAlIaxumPTtSmHAZgiw2nx1J6MjPHR/jYFdfyOY=
+golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f h1:Fqb3ao1hUmOR3GkUOg/Y+BadLwykBIzs5q8Ez2SbHyc=
+golang.org/x/sys v0.0.0-20200905004654-be1d3432aa8f/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
