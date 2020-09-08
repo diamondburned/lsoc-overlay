@@ -47,7 +47,7 @@ in {
 					PartOf = [ "graphical-session.target" ];
 				};
 				Install = {
-					WantedBy = [ "grpahical-session.target" ];
+					WantedBy = [ "graphical-session.target" ];
 				};
 				Service = {
 					Type = "simple";
