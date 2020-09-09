@@ -87,10 +87,12 @@ func main() {
 	setAlphaState(w)
 
 	w.Add(box)
-	w.Show()
+	w.Iconify()
 
 	if c.Window.Passthrough {
+		w.Show() // realize before setting.
 		setPassthrough(w)
+		w.Hide()
 	}
 
 	glib.TimeoutAdd(c.PollingMs, func() bool {
@@ -102,8 +104,10 @@ func main() {
 		// Reveal the overlay if there are cameras. We minimize the window
 		// instead of hiding it, as
 		if n > 0 {
+			w.Show()
 			w.Deiconify()
 		} else {
+			w.Hide()
 			w.Iconify()
 		}
 
