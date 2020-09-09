@@ -78,13 +78,6 @@ func main() {
 	sctx, _ := box.GetStyleContext()
 	sctx.AddClass("main")
 
-	rev, _ := gtk.RevealerNew()
-	rev.SetTransitionType(gtk.REVEALER_TRANSITION_TYPE_CROSSFADE)
-	rev.SetTransitionDuration(100)
-	rev.SetRevealChild(false)
-	rev.Add(box)
-	rev.Show()
-
 	w, _ := gtk.WindowNew(gtk.WINDOW_POPUP)
 	w.SetTypeHint(gdk.WINDOW_TYPE_HINT_DOCK)
 	w.SetSkipTaskbarHint(true)
@@ -93,7 +86,7 @@ func main() {
 	w.Move(c.Window.X, c.Window.Y)
 	setAlphaState(w)
 
-	w.Add(rev)
+	w.Add(box)
 	w.Show()
 
 	if c.Window.Passthrough {
@@ -106,9 +99,12 @@ func main() {
 			log.Println("Failed to update:", err)
 		}
 
-		// Reveal the overlay if there are cameras.
-		if reveal := n > 0; reveal != rev.GetRevealChild() {
-			rev.SetRevealChild(reveal)
+		// Reveal the overlay if there are cameras. We minimize the window
+		// instead of hiding it, as
+		if n > 0 {
+			w.Deiconify()
+		} else {
+			w.Iconify()
 		}
 
 		return true
