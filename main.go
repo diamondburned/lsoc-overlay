@@ -13,9 +13,6 @@ import (
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
 	"github.com/pkg/errors"
-
-	"net/http"
-	_ "net/http/pprof"
 )
 
 var configPath = "./config.json"
@@ -45,8 +42,6 @@ func init() {
 			text-shadow: 0px 0px 2px alpha(@recording, 0.5);
 		}
 	`)
-
-	go http.ListenAndServe(":20485", nil)
 }
 
 func main() {
